@@ -1,0 +1,90 @@
+\chapter{先说重要的}
+
+进入\unlink{https://cn.overleaf.com/}{Overleaf}之后需使用邮箱注册一个账号来使用免费版Overleaf。
+
+注册完成之后进入项目页面，点击左侧\textbf{创建新项目}按钮，选择最后一项\textbf{预览所有}，在跳转后的页面内的搜索框内输入“成都理工大学本科论文模板”。
+
+搜索结果可能会有好几个，同学们点击第一个结果项即可，其余项是不同分类下的搜索结果，不用理会。
+
+进入模板详情页后点击\textbf{Open as Template}按钮，即可打开本模板。
+
+由于Overleaf提交模板还需审查，而这需要一定时间，我不能保证Overleaf里的模板是最新的，所以在这里也附上\unlink{https://github.com/fumeng6/CDUT-Undergraduate-Thesis-Template}{我在github上的模板的链接}。
+
+这是为成都理工大学地球物理学院的同学们编写的本科论文~\LaTeX~模板,鉴于texlive环境搭建的繁琐性，我推荐在Overleaf这一线上平台编写本模板。
+
+如有需要可前往\unlink{https://tug.org/texlive/}{TeX Live 的官方站点}下载发行版本的TeX Live以进行本地的编译工作，现在应该是更新到2021这一版本了，看需要下载吧，不必追求太新。另外就是发行版本的TeX Live自带的Texworks编辑器可能过于老旧的问题，但个人认为Texworks除了丑点之外，其实挺好的。确有此需要的同学可以可参照\unlink{https://www.jianshu.com/p/3e842d67ada2}{《latex零基础入门》}这篇文章进行~\LaTeX~的编译环境的准备以及编译器的配置。
+
+\section{模板各文件夹及文件说明}
+
+\begin{description}
+  \item[BIBbase]  此文件夹内包含ref.bib、gbt7714-2005.bst共两个文件.\par 
+  \textit{ref.bib}文件中存放的是本篇论文引用的参考文献，后续需要同学们自行修改添加自己论文中所引用的参考文献.\par
+  \textit{gbt7714-2005.bst}为参考文献格式规范国标\verb|GB\T7714-2005|的样式文件，不可修改.
+  
+  \item[figures]  此文件夹内存放论文中所需插入的图片，后续需要同学们自行添加.
+
+  \item[fonts]  此文件夹内存放本篇论文调用的字体，不可修改.
+
+  \item[includefile]  此文件夹内包含abstract.tex、commitment.tex、conclusion.tex、references.tex、thanks.tex共五个文件.\par
+  \textit{abstract.tex}  此为中、英文摘要文件，后续需要同学们自行修改其中内容.\par
+  \textit{commitment.tex}  此为诚信承诺书页面设置文件，不可修改.\par
+  \textit{conclusion.tex}  此为论文的结论文件，后续需要同学们自行修改其中内容.\par
+  \textit{references.tex}  此为参考文献设置文件，不可修改.\par
+  \textit{thanks.tex}  此为论文的致谢文件，后续需要同学们自行修改其中内容.
+  
+  \item[mainbody]  此文件夹下存放论文的正文部分各章节的文件，我写此文只用三章故只有chapter1.tex、chapter2.tex、chapter3.tex三个文件，如有需要请自行新建诸如chapter4.tex、chapter5.tex等文件进行更多章节的写作.
+  
+  \item[CDUT Bachelor thesis.tex]  此文件为模板主文件，在完成撰写后，编译它将生成同学们自己的论文.
+  
+  \item[CDUT]  此为模板所用的文档类文件，不可修改.
+  
+\end{description}
+
+
+\section{文档具体使用步骤}
+
+\begin{description}
+  \item[step 1]  在Overleaf上打开模板后，请点击页面左上角菜单，下拉到设置板块，将编译器设为XeLaTex，Tex Live版本选择2020.
+  
+  \item[Step 2]  进入includefile文件夹，其中abstract.tex、conclusion.tex、thanks.tex这几个文档,
+分别对应着 (1) 中文及英文摘要, (2) 结论, (3) 致谢.请自行填写.
+
+  \item[Step 3]  打开主文档CDUT Bachelor thesis.tex, 于“封面页信息采集”板块填写题目、作者等封面页信息.
+
+  \item[Step 4]  进入mainbody文件夹，其中chapter1.tex、chapter2.tex、chapter3.tex这三个文件是我预先编写，它们依次对应着本文的第一章、第二章以及第三章，同学们需要自行修改编写其中的内容，这也即是论文的正文部分写作（这一步涉及到的诸如公式、表格、图片的插入，参考文献的引用等问题将在后面做详细说明）.
+  
+  \item[Step 5]  在全部完成之后，再进行最后一次编译，确认无误后点击PDF预览板块上方的下载按钮，即可将写好的论文下载到本地.
+\end{description}
+
+\section{Overleaf的简单使用指南}
+总的来说Overleaf的使用并不复杂，如果有英文看不懂的，一般当你打开项目页的时候页面顶部会有一个蓝色块内有一行话，点一下整个Overleaf即进入中文版面。
+\subsection{Overleaf上的常用快捷键}
+
+别的我一时想不起来，先介绍一下Overleaf上的常用快捷键吧
+
+\begin{table}[ht]\centering
+\begin{tabular}{l l l l}
+\hline
+Ctrl + F & 查找（并替换）& Ctrl + Enter & 编译 \\
+Ctrl + Z & 撤销 & Ctrl + Y & 恢复撤销 \\
+Ctrl + Home & 跳转到文件开头 & Ctrl + End & 跳转到文件末尾 \\
+Ctrl + L & 转到某行 & Ctrl + D & 删除当前行 \\
+Ctrl + U & 改为大写 & Ctrl + Shift + U & 改为小写 \\
+Ctrl + B & 粗体 & Ctrl + I & 斜体 \\
+\hline
+\end{tabular}
+\end{table}
+特别说明一下，在LaTeX中加粗某些字使用的是\verb|\textbf{}|命令，这里的加粗快捷键的作用就是生成这一命令，当然你也可以选中你想要加粗的内容然后再按加粗快捷键，这时它会自动完成代码部分的工作，不需再手动将所需加粗内容放到命令中去，这样可以简单的实现加粗这一功能而不用总是打\verb|\textbf{}|命令了。
+\par 斜体快捷键与之同理。
+
+\subsection{历史记录}
+其余值得一说的就是Overleaf的历史记录功能，它在编译页面的右上角，里面可以看到你之前版本的代码，这在你改错代码或者想要找之前某种感觉得时候或许会有用。
+\subsection{上传与新建文件}
+
+另外就是在使用模板的过程中可能会需要用到的上传图片功能，该按钮在编译页面的左上角，与之并排的还有新建文件按钮（可能会在正文写作过程中用到，对于正文超过三章的同学）以及新建文件夹按钮（应该是用不到的）。
+
+\subsection{双向定位}
+双向定位功能是我的自己的叫法，在\textbf{重新编译}按钮的左下方有上下两个排列在一起，分别指向左侧代码工作区以及右侧PDF预览区的两个箭头，当你在代码工作区选中一行内容并点击指向右侧的箭头，Overleaf会为你将PDF页面跳转到这一行代码区内容所指向的PDF区内容，简单来说就是由代码跳转到编译结果。反过来，由PDF区跳转到代码区也是一样的操作。或者你可以简单的在你想要跳转的内容上双击鼠标左键（这一操作仅在由PDF内容跳转到代码内容时有效）
+\subsection{更改PDF阅读器}
+对于用Overleaf内置的PDF阅读器感到不舒服的同学，可以在菜单中将阅读器由<\textbf{内嵌}>改为<\textbf{本机}>，这样一来编译之后的PDF预览应当用的是你所使用的浏览器所带有的PDF阅读器。我所使用的是Google Chrome，其自带的PDF阅读器相较Overleaf的内嵌PDF阅读器在功能上会强大很多。不过需要注意的是，使用本机阅读器之后就无法再使用Overleaf的双向定位功能。
+
