@@ -1,0 +1,480 @@
+\chapter{杂七杂八的话}
+
+~\LaTeX~的命令形式都是一个反斜杠后边跟字母也许还有括号之类的，一般请在输入一个命令之后敲一个空格。
+
+\section{换段、换行与空格}
+在~\LaTeX~中，单个的回车与空格会被忽略。
+\begin{description}
+ \item[换段]此处的换段指的是开启一个新段落，通过空一行（两次回车）实现段落换行，也可以通过 \verb|\par| 命令来新起一段。
+ \item[换行]此处的换行指的是换行不换段，通过输入两个反斜杠也即是\verb|\\|可以实现换行，换行之后不会缩进，与上一行仍属于一个段落的内容。
+ \item[空格]此处的空格指的不是键盘上敲一下空格键生成的空格，而是出现在文中的空格，例如\quad 这\quad 样\quad 子，通过命令\verb|\quad|实现。
+\end{description}
+
+\section{标题}
+\begin{tabular}{l l}
+\verb|\chapter{}| & 一级标题命令,形如第一章 \\
+\verb|\section{}| & 二级标题命令,形如1.1 \\
+\verb|\subsection{}| & 三级标题命令,形如1.1.1 \\
+\verb|\subsubsection{}| & 四级标题命令,形如1.1.1.1 \\
+\end{tabular}
+
+\section{字体调节}
+\begin{tabular}{ll}
+ \verb|\song| & {\song 宋体} \\
+ \verb|\hei| & {\hei 黑体} \\
+ \verb|\kai| & {\kai 楷书} \\
+ \verb|\textbf{}| & \textbf{加粗} \\
+ \verb|\textit{}| & \textit{斜体} \\
+\end{tabular}
+
+
+\section{字号调节}
+字号命令: \verb|\zihao{}|
+
+使用 \verb|\zihao| 命令调整字体大小时, 西文字号大小会始终和中文字号保持一致。
+
+\begin{tabular}{ll}
+\verb|\zihao{0}| &\zihao{0}  初号字 English \\
+\verb|\zihao{-0}|&\zihao{-0} 小初号 English \\
+\verb|\zihao{1} |&\zihao{1}  一号字 English \\
+\verb|\zihao{-1}|&\zihao{-1} 小一号 English \\
+\verb|\zihao{2} |&\zihao{2}  二号字 English \\
+\verb|\zihao{-2}|&\zihao{-2} 小二号 English \\
+\verb|\zihao{3} |&\zihao{3}  三号字 English \\
+\verb|\zihao{-3}|&\zihao{-3} 小三号 English  \\
+\verb|\zihao{4} |&\zihao{4}  四号字 English  \\
+\verb|\zihao{-4}|&\zihao{-4} 小四号 English \\
+\verb|\zihao{5} |&\zihao{5}  五号字 English \\
+\verb|\zihao{-5}|&\zihao{-5} 小五号 English \\
+\verb|\zihao{6} |&\zihao{6}  六号字 English \\
+\verb|\zihao{-6}|&\zihao{-6} 小六号 English \\
+\verb|\zihao{7} |&\zihao{7}  七号字 English \\
+\verb|\zihao{8} |&\zihao{8}  八号字 English \\
+\end{tabular}
+
+按成都理工大学地球物理学院的本科论文格式要求, 本文正文使用的是{\zihao{-4}小四号}，应该来说是不用同学们自行改字号的，如果有什么特殊需求也可以参考此处进行字号调整，只需将字号调节命令与需调节内容放在同一个大括号内即可。
+
+
+\section{公式的使用}
+在~\LaTeX~中撰写公式，需要给公式加上一个数学环境，我在此处罗列一些常用的数学环境。
+
+\begin{tabular}{ll}
+\toprule
+环境命令 & 命令含义\\
+\midrule
+ \verb|\(...\)| & 行内公式 \\
+ \verb|$...$| & 行内公式 \\
+ \verb|\begin{math}...\end{math}| & 行内公式 \\
+ \verb|\[...\]| & 行间公式\quad 不带编号 \\
+ \verb|\begin{equation}...\end{equation}| & 行间公式\quad 带编号 \\
+ \verb|\begin{displaymath}...\end{displaymath}| & 行间公式\quad 不带编号 \\
+ \verb|\begin{equation*}...\end{equation*}| & 行间公式\quad 不带编号 \\
+\bottomrule
+\end{tabular}
+
+下面我做一些简单的示范。\par 
+在文中引用公式可以这么写：$a^2+b^2=c^2$这是勾股定理，他还可以表示为$c=\sqrt{a^2+b^2}$，还可以让公式单独一段并且加上编号。注意，公式前请不要空行。
+\begin{equation}
+\sin^2{\theta}+\cos^2{\theta}=1 \label{eq:pingfanghe}
+\end{equation}
+
+还可以通过添加标签在正文中引用公式，如式\eqref{eq:pingfanghe}。
+
+我们还可以轻松打出一个漂亮的矩阵：
+\begin{equation}
+  \mathbf{A}=
+  \left[\begin{matrix}
+    1&2&3&4\\
+    11&22&33&44\\
+  \end{matrix}\right] \times
+  \left[\begin{matrix}
+    22&24\\
+    32&34\\
+    42&44\\
+    52&54\\
+  \end{matrix}\right]
+\end{equation}
+
+或者多行对齐的公式：
+\begin{equation}
+  \begin{aligned}
+    f_1(x)&=(x+y)^2\\
+          &=x^2+2xy+y^2
+  \end{aligned}
+\end{equation}
+
+\section{插图的使用}
+
+\LaTeX 环境下可以使用常见的图片格式：JPEG、PNG、PDF、EPS等。当然也可以使用\LaTeX 直接绘制矢量图形，可以参考pgf/tikz等包中的相关内容。需要注意的是，无论采用什么方式绘制图形，首先考虑的是图片的清晰程度以及图片的可理解性，过于不清晰的图片将可能会浪费很多时间。
+
+插入图片的命令为\verb|\includegraphics[]{}|，方括号[]里是控制图片大小以及角度的控制命令，大括号{}里是所插入图片的文件名（注意，一定要把图片放到figures文件夹里去）。
+
+这里我罗列一些控制图片的常见命令：
+
+图示例如下：
+
+\begin{tabular}{ll}
+\verb|scale=...| & 等比例缩放 \\
+\verb|width=..., height=...| & 宽和高 \\
+\verb|width=...\textwidth| & 与文本宽度成比例\\
+\verb|angle=...| & 旋转(顺时针为负角度，逆时针为正角度)\\
+\end{tabular}
+
+另外，一般来说，插入的图片需要放入一个名为浮动体的环境中以便于\LaTeX 进行排版，其一般形式如下：
+
+\verb|\begin{figure}[!htbp]|\par
+\verb|\centering|\par
+\verb|\includegraphics[]{}|\par
+\verb|\chartname{图名}|\par
+\verb|\label{fig:my_label}|\par
+\verb|\end{figure}|
+
+简单说一下，\verb|\begin{figure}...\end{figure}|是一对，就像C语言里if和end一样。
+
+\verb|\chartname{图名}|这一命令即是对插入的图片取一个图名。
+
+\verb|\label{fig:my_label}|这个命令紧跟在图名命令后，作用是给图片加一个标签，所谓标签也即是引用的时候你输入这个标签就能够引用图名了，这一命令也可用于公式，表格等，引用命令形如\verb|\ref{...}|。
+
+\verb|[htbp]|选项意即是浮动体位于此处、页顶、页底、独立一页。
+
+下面我做一些简单的示例：
+
+\begin{figure}[!htb]
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+     \includegraphics[width=0.4\textwidth]{images1.jpg}
+     \chartname{我书读得多，不会骗你}\label{fig:1}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[scale=0.5,angle=-45]{images2.jpg}
+    \chartname{哈哈哈}\label{fig:2}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[!htb]
+    \begin{minipage}[t]{0.5\linewidth}
+    \centering
+     \includegraphics[width=4cm,height=4cm]{images3.jpg}
+     \chartname{太难了}\label{fig:3}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[scale=0.6,angle=45]{images4.jpg}
+    \chartname{砰砰}\label{fig:4}
+  \end{minipage}
+\end{figure}
+
+引用某个图、表以及公式使用的命令为\verb|\ref{...}|。\par 
+就是像这样，如图~\ref{fig:1}，他描绘的示意羽扇纶巾的人，又如图\ref{fig:2},其展现的是一个哈哈大笑的蓝色鲨鱼。\par 
+如果想要图片所在页的页码，可以用命令\verb|\pageref{...}|实现。\par 
+就像这样，就如上文第\pageref{fig:1}页的图\ref{fig:1}所示，我书得的多，不会骗你的。\par 
+建议缩放时保持图像的宽高比不变。
+
+考虑到插入图片需求的多样性，下面罗列了一些可以用于前面图片控制命令的\LaTeX 长度单位及命令，在具体使用的时候可以多尝试一下，以达到最佳效果。
+
+\begin{tabular}{ll}
+pt & 单位长度，大约为0.3515mm \\
+mm & 一毫米 \\
+cm & 一厘米 \\
+in & 一英寸 \\
+ex & 当前字体尺寸中x的高度 \\
+em & 当前字体尺寸中M的宽度 \\
+\verb|\columnsep| & 两列之间的距离 \\
+\verb|\columnwidth| & 列宽 \\
+\verb|\linewidth| & 当前环境中线的宽度 \\
+\verb|\paperwidth| & 页面宽度 \\
+\verb|\paperheight| & 夜面高度 \\
+\verb|\textwidth| & 文本宽度 \\
+\verb|\textheight| & 文本高度 \\
+\end{tabular}
+
+\section{表格的使用}
+
+\subsection{通过在线工具生成表格}
+表格的输入可能会比较麻烦，可以使用在线的工具，如~\unlink{https://www.tablesgenerator.com/}{Tables Generator}~能便捷的创建表格，也可以使用离线的工具，如~\unlink{https://ctan.org/pkg/excel2latex}{Excel2LaTeX}~支持从Excel表格转换成\LaTeX{}表格。\unlink{https://en.wikibooks.org/wiki/LaTeX/Tables}{LaTeX/Tables}~上及~\unlink{https://www.tug.org/pracjourn/2007-1/mori/mori.pdf}{Tables in LaTeX}~也有更多的示例能够参考。
+
+\subsection{创建一个表格的简单介绍}
+\subsubsection{表格的一般形式及其含义}
+
+\verb|\begin{table}[htbp]|\par 
+\verb|\centering|\par 
+\verb|\chartname{表名}|\par 
+\verb|\label{tab:my_label}|\par 
+\verb|\begin{tabular}{cc}|\par 
+\verb|...&...\\|\par 
+\verb|...&...|\par 
+\verb|\end{tabular}|\par 
+\verb|\end{table}|\par 
+
+简单介绍一下，首先是关于插入表格的位置控制问题。
+
+同前面的图片的插入一样，主要就是用$h,t,b,p$这四个选项来控制表格位于此处、页顶、页底及单独一页，我注意到从Tables Generator粘贴来的代码是没有给这一浮动体位置控制命令的，因此需要同学们自己注意添加。
+
+因为地物院的论文写作要求中图名位于下方，表名位于上方，所以在写表格的时候应当将生成表格标题以及表格标签的命令放在表格内容开始之前，也即是上面一般形式中的位置。
+
+表格的主体内容在\verb|\begin{tabular}{c l r}...\end{tabular}|之间，在两列之间插入\verb|&|字符作为分割，在两行之间插入\verb|\\|作为分割。
+\par
+在上面一般形式的\verb|\begin{tabular}{c c}|里第二个大括号中的$c$是控制表中两列单元格里的内容居中显示的意思，另外还有$l$和$r$，前者控制单元格内容左对齐，后者控制内容右对齐。
+
+提醒一下使用在线工具的同学，就是表格标题的问题，我试了试Tables Generator这一工具，发现它不仅不给浮动体控制，也并不曾添加表名及表名标签命令。\par 因此请一定注意给自己复制过来的代码里加上生成表名及表名标签的命令，也就是\verb|\chartname{表名}\label{表格标签}|，这样在后续论文的写作中你才能引用它。
+
+好了，下面看看示例吧，同学们可以对照着右边的PDF看左边的代码所达成效果或者说所代表的含义。
+
+\subsection{普通表格}
+下面是一些普通表格的示例：
+
+\begin{table}[ht]
+\begin{minipage}[t]{0.45\textwidth}
+  \centering
+  \chartname{简单表格}
+  \label{tab:1}
+  \begin{tabular}{|l|c|r|}
+    \hline
+    我是& 一只 & 普通\\
+    \hline
+    的& 表格& 呀\\
+    \hline
+  \end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+  \centering
+  \chartname{一般三线表}
+  \label{tab:2}
+  \begin{tabular}{ccc}
+    \hline
+    姓名& 学号& 性别\\
+    \hline
+    张三& 001& 男\\
+    李四& 002& 女\\
+    \hline
+  \end{tabular}
+\end{minipage}  
+\end{table}
+
+\begin{table}[ht]
+\begin{minipage}[t]{0.45\textwidth}
+  \centering
+  \chartname{无框线表格}
+  \label{tab:3}
+  \begin{tabular}{ c c c }
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\  
+ cell7 & cell8 & cell9    
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\chartname{组合行列表格}
+\label{tab:4}
+\begin{tabular}{ |c|c|c|c| } 
+\hline
+col1 & col2 & col3 \\
+\hline
+\multirow{3}{4em}{Multiple row} & cell2 & cell3 \\ 
+& cell5 & cell6 \\ 
+& cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{minipage}  
+\end{table}
+
+\begin{table}[ht]
+\centering
+\chartname{定长表}
+\label{tab:5}
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}| }
+ \hline
+ \multicolumn{4}{|c|}{Country List} \\
+ \hline
+Country Name or Area Name& ISO ALPHA 2 Code & ISO ALPHA 3 Code & ISO numeric Code \\
+ \hline
+ Afghanistan   & AF    &AFG&   004\\
+ Aland Islands&   AX  & ALA   &248\\
+ Albania &AL & ALB&  008\\
+ Algeria    &DZ & DZA&  012\\
+ American Samoa&   AS  & ASM&016\\
+ Andorra& AD  & AND   &020\\
+ Angola& AO  & AGO&024\\
+ \hline
+\end{tabular}
+\end{table}
+
+更多的表格样式可以看看Overleaf的帮助文档（点击菜单拉到底），Overleaf的帮助文档是比较全面的，基本上数学公式的排版、图片插入、图像绘制、表格创建等论文写作可能会用到的内容它都有讲解，同学们不懂得可以多在这一文档里看看。
+
+\subsection{统计表格}
+要创建占满整个文字宽度的表格需要使用到tabularx，如不需要，使用tabular就行。引用表格与其它引用一样，用\verb|\ref{表格标签}|命令即可，就像这样：如表~\ref{tab:6}所示，统计表格一般是三线表形式。
+
+\begin{table}[ht]
+  \centering
+  \chartname{统计数据表格}
+  \label{tab:6}
+  \begin{tabularx}{\textwidth}{CCCC}
+    \toprule
+    姓名&年龄&身高&体重\\
+    \midrule
+    张三&14&156&42\\
+    李四&16&158&45\\
+    王二&14&162&48\\
+    陈六&15&163&50\\
+    \cmidrule{2-4} %添加2-4列的中线
+    平均&15&159.75&46.25\\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{跨页表格}
+跨页表格常用于附录（把正文懒得放下的实验数据统统放在附录的表中），以下是一个跨页表格的示例：
+
+{\centering
+  \begin{longtable}{ccccccccc}
+  \chartname{跨页表格示例} \\
+  \toprule
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  \midrule
+  \endfirsthead
+
+  \multicolumn{1}{l}{接上一页} \\
+  \toprule
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  \midrule
+  \endhead
+
+  \bottomrule
+  \hline \\
+  \multicolumn{9}{r}{{转下一页}} \\
+  \endfoot
+
+  \bottomrule
+  \endlastfoot    
+
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+  1     & 0 & 5  & 1  & 2  & 3  & 4  &  5 & 6 \\
+
+  \end{longtable}
+}
+
+\section{列表的使用}
+下面演示了创建有序及无序列表，如需其它样式，\href{https://www.latex-tutorial.com/tutorials/lists/}{LaTeX Lists}~上有更多的示例。
+
+\subsection{有序列表}
+这是一个计数的列表
+  \begin{enumerate}
+      \item 第一项
+          \begin{enumerate}
+              \item 第一项中的第一项
+              \item 第一项中的第二项
+          \end{enumerate}
+      \item 第二项
+    \begin{enumerate}[label=(\roman*)]
+      \item 第一项中的第一项
+      \item 第一项中的第二项
+    \end{enumerate}
+      \item 第三项
+  \end{enumerate}
+
+\subsection{不计数列表}
+  这是一个不计数的列表
+  \begin{itemize}
+      \item 第一项
+      \begin{itemize}
+          \item 第一项中的第一项
+          \item 第一项中的第二项
+      \end{itemize}
+      \item 第二项
+      \item 第三项
+  \end{itemize}
+
+\section{定理的使用}
+\begin{theorem}
+  设向量$\boldsymbol a\neq\boldsymbol 0$，那么向量$\boldsymbol b//\boldsymbol a$的充分必要条件是：存在唯一的实数$\lambda$，使$\boldsymbol b=\lambda \boldsymbol a$。
+\end{theorem}
+\begin{definition}
+  这是一条定义。
+\end{definition}
+\begin{lemma}
+  这是一条引理。
+\end{lemma}
+\begin{corollary}
+  对数轴上任意一点$P$，轴上有向线段$\overrightarrow {OP}$都可唯一地表示为点$P$的坐标与轴上单位向量$\boldsymbol e_u$的乘积：$\overrightarrow{OP}=u \boldsymbol e_u$。
+\end{corollary}
+\begin{proposition}
+  这是一条性质。
+\end{proposition}
+\begin{example}
+  这是一条例。
+\end{example}
+\begin{remark}
+  这是一条注。
+\end{remark}
+
+\section{引用的问题}
+
+\subsection{引用文中小节}\label{sec:ref}
+如引用小节~\ref{sec:ref}，在小节后加上生成标签的命令即可。
+
+\subsection{引用参考文献}
+这是一个参考文献引用的范例\cite{r1}
+
+还可以采用上标的引用方式\upcite{r2}
+
+引用多个文献\cite{r1,r2,r3,r4,r5}
+
+文献引用需要配合BibTeX使用，很多工具可以直接生成BibTeX文件（EndNote, NoteExpress, 百度学术，谷歌学术），以百度学术为例，在其中随便找一篇论文点击\textbf{<引用>}按钮，在弹出来的小窗口左下角点击BibTeX，将跳转页面的全部内容复制，打开本模板ref.bib文件，将复制的内容空一行粘贴进去即可
+
+\subsection{定理和公式的引用}
+还是用\verb|\ref{}|来引用。
+\begin{theorem}[谁发现的]\label{th-abcd}
+最大的正整数是~$1$.
+\end{theorem}
+
+\begin{proof}
+要找到这个最大的正整数, 我们设最大的正整数为~$x$, 则~$x \geqslant 1$, 两边同时乘以~$x$, 得到
+\begin{equation}\label{eq-abc}
+x^2 \geqslant x.
+\end{equation}
+而~$x$ 是最大的正整数, 由~\eqref{eq-abc} 式得到
+\[
+x^2 = x.
+\]
+所以
+\begin{equation*}
+x = 1.
+\end{equation*}
+\end{proof}
+
+引用的话就像这样，定理~\ref{th-abcd} 是一个重大的发现.
+
+%%%%----- 定义等环境的举例 --------
+\begin{definition}[整数]
+ 正整数(例如 1, 2, 3)、负整数(例如 ${−1}$, $−2$, $−3$)与零(0)合起来统称为{\hei 整数}.
+\end{definition}
+
+\begin{remark}
+  整数集合在数学上通常表示为 $\mathbf{Z}$ 或 $\mathbb{Z}$, 该记号源于德语单词 Zahlen(意为`` 数'')的首字母.
+\end{remark}
+
+\begin{proposition}
+任意两个整数相加、相减、相乘的结果, 仍然是整数.
+\end{proposition}
+
+\begin{example}
+  $1+2=3$.
+\end{example}
+
+\begin{corollary}
+   在整数集合内, 相加、相减、相乘运算是封闭的.
+\end{corollary}
+
+
+%%%%==========================================================%%%
