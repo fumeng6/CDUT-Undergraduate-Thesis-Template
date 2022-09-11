@@ -2,7 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{configuration/CDUT}[2021/8/17 Undergraduate thesis of School of Geophysics, Chengdu University of Technology]
 %%%============================载入类========================%%%
-\LoadClass[zihao=-4,a4paper,twoside,fontset=none]{ctexbook}
+\LoadClass[zihao=-4,a4paper,twoside,fontset=none,openright]{ctexbook}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
 
